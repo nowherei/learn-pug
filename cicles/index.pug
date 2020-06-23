@@ -1,0 +1,21 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    title Cicles
+  body
+    nav.menu
+      ul.menu_list
+        each name in ['Home', 'About', 'Services', 'Catalog', 'Contact']
+          li
+            a(href="#")= name
+      //- with key
+      ul.menu_list
+        for value, index in {'Home' : 'home', 'About' : 'about', 'Services' : 'services', 'Catalog' : 'catalog', 'Contact' : 'contact',}
+          li
+            a(href="/" + value + ".html")= index
+      //- while
+      - var i = 0
+      ul.list
+        while i < 4
+          li= i++
