@@ -1,0 +1,60 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    title Mixin
+  body
+    //- Mixin declaration with arguments
+    mixin listItem(name)
+      li= name
+    //- Mixin declaration
+    mixin listItems
+      ul.list-items
+        +listItem("One")
+        +listItem("Two")
+        +listItem("Tree")
+        +listItem("Four")
+        +listItem("Five")
+
+    //- Call mixin
+    +listItems
+    
+    //- Mixin declaration with default
+    mixin article(title="Title default")
+      article.article
+        h1= title
+
+    //- Call mixin
+    +article()
+
+    //- Mixin declaration (with condition block)
+    mixin article(title)
+      article.article
+        h1= title
+        if block
+          block
+        else 
+          p No content
+
+    //- Call mixin
+    +article("Title page")
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+    //- Mixin declaration with attributes
+    mixin link(href, name)
+      //- attributes == {class: "link-btn"}
+      a(class!= attributes.class href= href)= name
+
+    +link('/link.html', 'linkName')(class="link-btn")
+
+
+    //- Mixin declaration with rest arguments
+    mixin list(id, ...items)
+      ul(id=id)
+        each item in items
+          li= item
+
+    +list('myList', 1, 2, 3, 4)
+
+    
