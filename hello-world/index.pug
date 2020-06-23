@@ -1,6 +1,39 @@
+doctype html
 html(lang="ru")
   head
     meta(charset="utf-8")
     title= "Учимся работать с шаблонизатором Pug"
   body
       h1 Hello, World!
+      // list 
+      ul.list#listItems
+        li.list__item Значение 1
+        li.list__item Значение 2
+        li.list__item Значение 3
+        li.list__item Значение 4
+      // atributes
+      a(href="#", target="_blank") Ссылка
+      a(href="#" target="_blank") Ссылка
+      input(
+        type='checkbox'
+        name='agreement'
+        checked
+      )
+      a.link#linkHref(href="#" target="_blank") Ссылка
+      a(class="link" id="linkHref" href="#" target="_blank") Ссылка
+      // text
+      p 
+        | This is test text
+        | New line
+      p.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex dolorum, assumenda animi, deleniti sunt tempore quaerat nihil eveniet unde perferendis, possimus est temporibus labore minus amet et? Voluptatem, molestiae tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex dolorum, assumenda animi, deleniti sunt tempore quaerat nihil eveniet unde perferendis, possimus est temporibus labore minus amet et? Voluptatem, molestiae tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      // tag in text
+      p Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Ex dolorum, assumenda animi, deleniti sunt…
+      // comment html 
+      //- comment pug
+      //-
+        This is more lines 
+        comment in pug
+      //
+        This is more lines
+        comment in html markup
